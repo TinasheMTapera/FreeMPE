@@ -1,0 +1,12 @@
+status: planned
+device_id: seaboard-block-01
+application:
+  name: ROLI Dashboard
+  version: unknown
+network_state: disconnected
+launch_result: unknown
+authentication_prompt: unknown
+visible_controls: []
+blocked_actions: []
+baseline_rechecked_after_close: unknown
+notes: []

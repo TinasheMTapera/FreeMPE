@@ -1,0 +1,10 @@
+status: planned
+device_id: seaboard-block-01
+sound_source:
+  name: unknown
+  version: unknown
+  vendor_independent: true
+  mpe_configuration: unknown
+ordinary_playback: unknown
+expressive_playback: unknown
+notes: []

@@ -1,0 +1,18 @@
+status: planned
+device_id: seaboard-block-01
+observer:
+  name: unknown
+  version: unknown
+ordinary_midi:
+  status: unknown
+  evidence: []
+mpe:
+  status: unknown
+  evidence: []
+gestures:
+  single_note: unknown
+  simultaneous_notes: unknown
+  pressure: unknown
+  lateral_movement: unknown
+  vertical_movement: unknown
+notes: []

@@ -1,0 +1,11 @@
+status: planned
+device_id: seaboard-block-01
+network_state: disconnected
+vendor_software_running: false
+connection: USB
+macos_midi_studio:
+  device_appeared: unknown
+  displayed_name: unknown
+  ports: unknown
+observed_at: unknown
+notes: []

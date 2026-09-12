@@ -1,0 +1,14 @@
+status: planned
+device_id: seaboard-block-01
+device_model: unknown
+device_generation: unknown
+host:
+  operating_system: macOS
+  version: unknown
+  hardware: "M4 MacBook Pro"
+connection_planned: USB
+firmware:
+  value: unknown
+  source: unknown
+baseline_protection: "No Dashboard, updater, or configuration change before this record."
+notes: []

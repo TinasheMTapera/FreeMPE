@@ -1,0 +1,11 @@
+device_id: seaboard-block-01
+capabilities:
+  offline_recognition: {status: unknown, evidence: []}
+  ordinary_midi: {status: unknown, evidence: []}
+  mpe: {status: unknown, evidence: []}
+  independent_sound: {status: unknown, evidence: []}
+  local_configuration: {status: unknown, evidence: []}
+  configuration_persistence: {status: unknown, evidence: []}
+  backup_restore: {status: unknown, evidence: []}
+  local_recovery: {status: unknown, evidence: []}
+next_low_risk_investigation: unknown
