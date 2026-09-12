@@ -1,0 +1,52 @@
+---
+title: "Observe Dashboard offline"
+subtitle: "Stage 6 — identify application dependencies without making changes"
+manual.page: 15
+execute:
+  eval: false
+---
+
+## Investigation
+
+What can the legitimate, already-installed official configuration application do
+while offline, and what does it add beyond the preserved controller baseline?
+
+::: {.manual-prereq title="Preserve the pre-Dashboard baseline"}
+
+Confirm that the power-cycle record exists and that the Mac remains offline.
+Use only an already installed, legitimately obtained application. Do not sign
+in, update, install, flash firmware, or apply a device setting in this stage.
+The active specification must explicitly permit observation of Dashboard.
+
+:::
+
+::: {.manual-procedure title="Create the application observation record"}
+
+Copy the template:
+
+```bash
+cp evidence/templates/dashboard-offline.yml evidence/records/seaboard-block-01-dashboard-offline.yml
+```
+
+Record the application name/version, launch result, authentication prompt (if
+any), visible device state, and which controls are visible or disabled. Treat a
+login prompt as an observation; do not attempt to bypass it.
+
+:::
+
+::: {.manual-procedure title="Close without applying changes"}
+
+Close the application without selecting a configuration control. Reconfirm the
+ordinary MIDI behaviour from Stage 3. This establishes whether observation alone
+changed the baseline.
+
+:::
+
+::: {.manual-check title="Evaluate application dependency"}
+
+Record Dashboard as offline-capable only for actions actually observed to work
+offline. Record it as authentication-dependent only when a prompt prevented a
+named action. Neither outcome determines whether the controller itself works
+offline.
+
+:::

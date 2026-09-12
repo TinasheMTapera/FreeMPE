@@ -31,3 +31,24 @@ The physical device I bought, belongs to me.
 The technology called MPE, belongs to everyone.
 
 TT
+
+## Working in FreeMPE
+
+FreeMPE begins with a human intention, not a software feature. Use Spec Kit to
+write one intention specification for each meaningful turn of work, then choose
+the smallest fitting route:
+
+- document stewardship;
+- learning;
+- preservation investigation; or
+- software development.
+
+Only a preservation-investigation specification marked **ready to run** may
+authorize a physical-device experiment. The Quarto book in `notebooks/` is the
+human-facing operational manual for those approved investigations; it does not
+authorize them by itself. Software development uses the full Spec Kit
+specification → plan → tasks → implementation → convergence lifecycle only when
+software is the appropriate response to the intention.
+
+See the rendered book's **Human intent routing** page before beginning a new
+turn.

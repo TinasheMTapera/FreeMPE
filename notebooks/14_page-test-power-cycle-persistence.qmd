@@ -1,0 +1,52 @@
+---
+title: "Test power-cycle persistence"
+subtitle: "Stage 5 — observe state retention without changing it"
+manual.page: 14
+execute:
+  eval: false
+---
+
+## Investigation
+
+Does the observed baseline behaviour persist after a normal disconnect and
+reconnection, without a vendor tool or network connection?
+
+::: {.manual-prereq title="Require a recorded playable baseline"}
+
+Confirm the previous MIDI/MPE and independent-sound records exist. Do not
+change configuration before this test; this stage observes persistence of the
+current state, rather than testing a newly chosen setting. Confirm that a normal
+power-cycle is within the active specification's approved scope.
+
+:::
+
+::: {.manual-procedure title="Capture before and after observations"}
+
+Copy the template:
+
+```bash
+cp evidence/templates/power-cycle.yml evidence/records/seaboard-block-01-power-cycle.yml
+```
+
+Record the MIDI device name, port appearance, and fixed gesture results before
+the power cycle. Disconnect normally, wait long enough for the device to power
+down, reconnect by the same USB path, and repeat exactly the same observations.
+
+:::
+
+::: {.manual-procedure title="Record only differences"}
+
+Compare the two observations. Record changes in recognition, channel behaviour,
+pitch response, pressure, or surface response. Do not infer a cause; label each
+difference as observed, not observed, or unknown.
+
+:::
+
+::: {.manual-check title="Evaluate persistence"}
+
+Confirm baseline persistence only when the same documented observations recur
+after reconnection. If they differ, report exactly what changed and preserve the
+record for a later, focused investigation. Do not use Dashboard to repair the
+state before documenting the failure.
+
+:::

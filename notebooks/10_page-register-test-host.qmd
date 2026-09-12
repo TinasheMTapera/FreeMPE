@@ -1,0 +1,59 @@
+---
+title: "Register the test host and device"
+subtitle: "Stage 1 — establish a known-good, non-invasive baseline"
+manual.page: 10
+execute:
+  eval: false
+---
+
+## Investigation
+
+Which physical device and macOS host are being observed, before any setting,
+firmware, or software state is changed?
+
+::: {.manual-prereq title="Protect the starting state"}
+
+Use one Seaboard Block and the M4 MacBook Pro. Do not open ROLI Dashboard, run
+an updater, change a device setting, or flash firmware. Keep the device
+disconnected while you create the record. Confirm that an intention
+specification under `../specs/` selects the preservation-investigation route and
+is marked `ready to run`.
+
+:::
+
+::: {.manual-procedure title="Create private and reviewable records"}
+
+From the repository root, copy the two templates:
+
+```bash
+cp evidence/templates/device-identity.private.yml evidence/private/seaboard-block-01.yml
+cp evidence/templates/device-baseline.yml evidence/records/seaboard-block-01-baseline.yml
+```
+
+Put serial number and Bluetooth address only in the private record. In the
+reviewable baseline, record the date, macOS version, Mac model, device label,
+connection planned for the test, and the fact that no device state has been
+changed.
+
+:::
+
+::: {.manual-procedure title="Record visible version information"}
+
+If a version label is visible on the device, packaging, or a previously saved
+legitimate record, transcribe it as *reported*, with its source. Do not launch
+vendor software solely to discover a version at this stage. Leave unknown fields
+as `unknown`; unknown is useful evidence.
+
+:::
+
+::: {.manual-check title="Evaluate the baseline record"}
+
+This stage passes when both records exist, the private record remains outside
+Git, and the reviewable baseline identifies one device and one host without
+claiming any MIDI or MPE result. It is acceptable—and expected—for firmware and
+other fields to remain `unknown`.
+
+If any setting was changed or an updater was opened, mark the baseline as
+`contaminated`, explain why, and begin again with the next untouched device.
+
+:::

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introduction – The FreeMPE Project</title>
+<title>12&nbsp; Write the dependency map – The FreeMPE Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,8 +68,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./manifesto.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./16_page-capture-one-configuration-change.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -85,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./17_page-write-dependency-map.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Write the dependency map</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -118,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -184,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./17_page-write-dependency-map.html" class="sidebar-item-text sidebar-link">
+  <a href="./17_page-write-dependency-map.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Write the dependency map</span></span></a>
   </div>
 </li>
@@ -193,15 +227,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#investigation" id="toc-investigation" class="nav-link active" data-scroll-target="#investigation"><span class="header-section-number">12.1</span> Investigation</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Write the dependency map</span></h1>
+<p class="subtitle lead">Stage 8 — convert observations into the next safe decision</p>
 </div>
 
 
@@ -218,23 +259,26 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>After spending some time going back and forth with ChatGPT about how I like to play music, what I like about the Roli ecosystem, and how their current business affairs are panning out, I decided that I wanted to do what I can to keep this new, awesome technology alive and accessible regardless of what may or may not happen to Roli.</p>
-<p>I’m going to take a brief moment to philosophise on the state of things, if you don’t mind.</p>
-<p>I think most would agree that we would pay people for good things in 2026 if</p>
-<ol type="1">
-<li>we support its intended use and promised impact on us and the world at large,</li>
-<li>we can afford the thing,</li>
-<li>it’s worth it holistically and presently, given the time in their life and circumstances they perceive to come from their decision to buy it.</li>
-</ol>
-<p>What’s clear is that in late-stage capitalism, one or more of these premises is being violated. When a software pirate violates it, most people believe they are violating principle 2. But pirates can have that, <em>and</em> components of 1 and 3 involved in their decision.</p>
-<p>I hope that readers can understand that this project does not use principle 2 as a singular reason for its existence, but does acknowledge that the rising cost of living crisis in the western world is not being helped by increasing costs, encroaching subscriptions, and general enshittification of things we’re supposed to do to get away from stress. Things like music.</p>
-<p>This is not a dig on Roli, music business, music technologists, or anyone involved in the production of the Seaboard/Lightpad, Noise/Equator etc. I love and respect these products and their creators. But I just believe, deeply and fundamentally, that <em>knowledge belongs to everyone</em>. To see the phenomenon of MPE disappear with the company Roli, would be like if the we lived in a different timeline where the guy who was going to sign the papers to start selling Akai MPCs decided not to go to work that day, and as a result we all live without samplers.</p>
-<p>I do not want to live in that world, and today, AI exists as a <em>reasoning engine</em> that can help us put many, many, many millions of sentences together, summarize them, and spit them back out ot us with a plan.</p>
-<p>Well, this project is the culmination of many many conversations with my own ChatGPT instance, but also with several individuals on the internet and comment sections. My philosophy is laid bare in this file, which you are welcome to examine and is tracked by Git — there is no AI intervention in this file. It is what I truly believe should come of this project.</p>
-<p>Everyone should be able to see MPE the same way I saw an electric guitar pedal for the first time, or the first time I used VirtualDJ on my beat up old laptop for the first time, or your first drum machine — whatever it may be, we can’t afford to let the technological know-how cannot disappear just because someone enterprising put it behind a paywall.</p>
-<p>Let’s free MPE, y’all.</p>
+<section id="investigation" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="investigation"><span class="header-section-number">12.1</span> Investigation</h2>
+<p>Which controller capabilities work independently, which depend on an official application, and which remain unknown?</p>
+<div class="manual-prereq callout callout-important" title="Require the investigation records">
+<p>Review all completed records from Stages 1–7. Do not fill a missing observation from memory, online discussion, or expectation. A missing record remains <code>unknown</code>. Link the map to the active intention specification so its conclusion can decide whether to stop, revise the investigation, begin learning, or open a new software-development intention.</p>
+</div>
+<div class="manual-procedure callout callout-tip" title="Create the evidence-backed map">
+<p>Copy the template:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> evidence/templates/dependency-map.yml evidence/records/seaboard-block-01-dependency-map.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For each capability—offline recognition, MIDI, MPE, independent sound, configuration, persistence, backup/restore, and recovery—record status, evidence file, and next investigation. Link only records that actually support the claim.</p>
+</div>
+<div class="manual-procedure callout callout-tip" title="Choose the least invasive next step">
+<p>Prioritize an unknown that can be resolved by observation. Examples include a different MIDI observer, a controlled power-cycle repeat, or a second passive capture. Do not escalate to firmware work merely because an advanced capability is unknown.</p>
+</div>
+<div class="manual-check callout callout-warning" title="Evaluate the research outcome">
+<p>The stage passes when every claimed capability points to a specific evidence record and every unsupported capability remains <code>unknown</code>. The map must name one next low-risk investigation; it must not declare the device simply “free” or “bricked.”</p>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -639,14 +683,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./16_page-capture-one-configuration-change.html" class="pagination-link" aria-label="Capture one configuration change">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Capture one configuration change</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./manifesto.html" class="pagination-link" aria-label="FreeMPE">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">FreeMPE</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

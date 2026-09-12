@@ -1,0 +1,54 @@
+---
+title: "Capture one configuration change"
+subtitle: "Stage 7 — turn one reversible action into protocol evidence"
+manual.page: 16
+execute:
+  eval: false
+---
+
+## Investigation
+
+What communication and persistent state accompany one known, reversible
+configuration change made by the official tool?
+
+::: {.manual-prereq title="Require a recoverable, observed baseline"}
+
+Proceed only if the previous records exist, the selected control is understood,
+and the change is reversible without firmware flashing. Choose one variable—for
+example pitch-bend range—and one before/after value. If recovery is uncertain,
+stop at Stage 6. The active specification must name this exact control, both
+values, the capture method, and the stop condition before any change is made.
+
+:::
+
+::: {.manual-procedure title="Prepare metadata before touching the control"}
+
+Copy the metadata template and create a local raw-capture directory:
+
+```bash
+cp evidence/templates/setting-capture.yml evidence/records/seaboard-block-01-setting-capture.yml
+mkdir -p evidence/captures/seaboard-block-01
+```
+
+Record device, firmware if known, application version, transport, capture tool,
+the exact control, and before value. Start with passive capture where possible.
+
+:::
+
+::: {.manual-procedure title="Change one variable, then reverse it"}
+
+Capture traffic before, during, and after one change. Repeat the same change,
+then reverse it. Check the resulting device behaviour and power-cycle
+persistence. Keep raw capture local until you have reviewed its contents and
+redistribution status.
+
+:::
+
+::: {.manual-check title="Evaluate the protocol hypothesis"}
+
+Call a message pattern a *hypothesis* only when repeated captures align with one
+control change and its reversal. Record direction, payload candidates, device,
+firmware, persistence, and confidence. Do not send a suspected message back to
+the device in this stage.
+
+:::

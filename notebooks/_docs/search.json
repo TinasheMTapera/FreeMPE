@@ -18,5 +18,375 @@
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
+  },
+  {
+    "objectID": "manifesto.html",
+    "href": "manifesto.html",
+    "title": "2  FreeMPE",
+    "section": "",
+    "text": "2.1 Mission\nFreeMPE is a preservation and interoperability project for expressive electronic musical instruments.\nIts purpose is to help musicians retain practical ownership of hardware they have legitimately purchased when essential functionality depends on proprietary configuration software, licensing infrastructure, cloud services, abandoned applications, or vendors that can no longer support their products.\nThe initial case study is ROLI hardware, especially:\nThe project should eventually be useful to other MPE and expressive-MIDI devices.\nThe long-term aspiration is:\nFreeMPE should become both:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "manifesto.html#mission",
+    "href": "manifesto.html#mission",
+    "title": "2  FreeMPE",
+    "section": "",
+    "text": "2 × Seaboard Blocks\n1 × Lightpad Block\n1 × LUMI Block\n\n\n\n\nA musician should be able to buy an expressive controller, keep it for decades, and continue configuring and performing with it even if its manufacturer disappears.\n\n\n\nstandalone open-source tooling where missing tooling must be recreated; and\na landing space for compatible open-source work that already exists elsewhere.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "manifesto.html#layer-0-standards",
+    "href": "manifesto.html#layer-0-standards",
+    "title": "2  FreeMPE",
+    "section": "8.1 Layer 0 — Standards",
+    "text": "8.1 Layer 0 — Standards\nDocument the standard behavior underneath everything:\n\nMIDI\nMIDI 2.0 where relevant\nMPE\nUSB MIDI\nBluetooth MIDI\nSysEx\nHID or vendor-specific USB interfaces where discovered\n\nDo not reverse-engineer a proprietary mechanism if the desired behavior is already exposed through a standard interface.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "manifesto.html#layer-1-observation",
+    "href": "manifesto.html#layer-1-observation",
+    "title": "2  FreeMPE",
+    "section": "8.2 Layer 1 — Observation",
+    "text": "8.2 Layer 1 — Observation\nTools for answering:\n\nWhat is this device actually sending and receiving?\n\nProduce reproducible captures of:\n\nUSB descriptors\nMIDI messages\nMPE channel behavior\nSysEx traffic\nBLE services where relevant\nconfiguration changes\nstartup/shutdown behavior\n\nPrefer passive capture before active probing.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "manifesto.html#layer-2-protocol-documentation",
+    "href": "manifesto.html#layer-2-protocol-documentation",
+    "title": "2  FreeMPE",
+    "section": "8.3 Layer 2 — Protocol documentation",
+    "text": "8.3 Layer 2 — Protocol documentation\nTranslate observations into human-readable specifications.\nExample conceptual record:\nset_pitch_bend_range(value)\nrather than merely:\nF0 00 ... F7\nEvery discovered message should document:\n\ndirection\ntrigger\npayload\nexpected response\ndevice/model\nfirmware tested\npersistence\nconfidence",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "manifesto.html#layer-3-open-control-library",
+    "href": "manifesto.html#layer-3-open-control-library",
+    "title": "2  FreeMPE",
+    "section": "8.4 Layer 3 — Open control library",
+    "text": "8.4 Layer 3 — Open control library\nImplement the protocol independently.\nConceptually:\nfreempe\n    devices/\n        seaboard_block\n        lightpad_block\n        lumi_block\n    midi/\n    mpe/\n    transport/\n    protocols/\nThe library should not require a GUI.\nEverything important should eventually be callable programmatically.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "manifesto.html#layer-4-cli",
+    "href": "manifesto.html#layer-4-cli",
+    "title": "2  FreeMPE",
+    "section": "8.5 Layer 4 — CLI",
+    "text": "8.5 Layer 4 — CLI\nExample future interface:\nfreempe list\n\nfreempe inspect \"Seaboard Block\"\n\nfreempe mpe on\n\nfreempe bend-range 48\n\nfreempe sensitivity pressure 0.72\n\nfreempe lightpad layout chromatic\n\nfreempe backup device-backup.json\n\nfreempe restore device-backup.json\nSyntax is illustrative until the protocol is understood.\nThe CLI becomes the reference implementation because it is:\n\ninspectable;\nscriptable;\ntestable;\nportable;\neasy to preserve.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "manifesto.html#layer-5-gui",
+    "href": "manifesto.html#layer-5-gui",
+    "title": "2  FreeMPE",
+    "section": "8.6 Layer 5 — GUI",
+    "text": "8.6 Layer 5 — GUI\nOnly after the protocol/library is stable, provide an approachable open replacement for vendor configuration tools.\nThe GUI should call the same library as the CLI.\nDo not bury device knowledge exclusively inside GUI code.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "manifesto.html#m0-freeze-the-lifeboats",
+    "href": "manifesto.html#m0-freeze-the-lifeboats",
+    "title": "2  FreeMPE",
+    "section": "18.1 M0 — Freeze the lifeboats",
+    "text": "18.1 M0 — Freeze the lifeboats\nArchive legitimate documentation, installers, firmware and version information while available.\nNo reverse engineering required.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "manifesto.html#m1-offline-survival-matrix",
+    "href": "manifesto.html#m1-offline-survival-matrix",
+    "title": "2  FreeMPE",
+    "section": "18.2 M1 — Offline survival matrix",
+    "text": "18.2 M1 — Offline survival matrix\nFor all four current ROLI devices, establish exactly what works with:\nInternet disconnected.\nProduce the compatibility matrix.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "manifesto.html#m2-mpe-independence",
+    "href": "manifesto.html#m2-mpe-independence",
+    "title": "2  FreeMPE",
+    "section": "18.3 M2 — MPE independence",
+    "text": "18.3 M2 — MPE independence\nDemonstrate each suitable controller driving at least one non-ROLI MPE instrument without proprietary synthesis software.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "manifesto.html#m3-configuration-dependency-map",
+    "href": "manifesto.html#m3-configuration-dependency-map",
+    "title": "2  FreeMPE",
+    "section": "18.4 M3 — Configuration dependency map",
+    "text": "18.4 M3 — Configuration dependency map\nIdentify every setting that presently requires Dashboard or another ROLI application.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "manifesto.html#m4-first-open-configuration",
+    "href": "manifesto.html#m4-first-open-configuration",
+    "title": "2  FreeMPE",
+    "section": "18.5 M4 — First open configuration",
+    "text": "18.5 M4 — First open configuration\nChoose one harmless configuration parameter.\nObserve official behavior.\nReproduce it independently.\nDocument it.\nThis is the first true FreeMPE milestone.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "manifesto.html#m5-read-only-inspector",
+    "href": "manifesto.html#m5-read-only-inspector",
+    "title": "2  FreeMPE",
+    "section": "18.6 M5 — Read-only inspector",
+    "text": "18.6 M5 — Read-only inspector\nCreate:\nfreempe inspect\nthat can identify supported connected devices and report everything safely observable.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "manifesto.html#m6-minimal-open-dashboard",
+    "href": "manifesto.html#m6-minimal-open-dashboard",
+    "title": "2  FreeMPE",
+    "section": "18.7 M6 — Minimal open dashboard",
+    "text": "18.7 M6 — Minimal open dashboard\nConfigure the handful of parameters necessary for ordinary MPE performance without ROLI software.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "manifesto.html#m7-preservation-community",
+    "href": "manifesto.html#m7-preservation-community",
+    "title": "2  FreeMPE",
+    "section": "18.8 M7 — Preservation community",
+    "text": "18.8 M7 — Preservation community\nPublish protocol documentation, compatibility information, contribution procedures and carefully licensed OSS tooling.\nThen expand beyond ROLI.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>FreeMPE</span>"
+    ]
+  },
+  {
+    "objectID": "02_misc-human-intent-routing.html",
+    "href": "02_misc-human-intent-routing.html",
+    "title": "3  Human intent routing",
+    "section": "",
+    "text": "3.1 When an experiment may run\nEvery meaningful turn begins with a human intention: what the person wants to understand, change, make, or preserve. Software is one possible response; it is not the default container for the intention.\nCreate the intention specification with $speckit-specify. The project-local Spec Kit template records the goal, uncertainty, constraints, completion rule, and route. Select the smallest route that can complete the intention.\nAn experiment is not authorized by curiosity alone, nor by a Manual page. Its intention specification must select preservation investigation and state:\nThe corresponding Manual page then supplies the visible procedure, local artifacts, and check. If the outcome suggests software, begin a new software-development intention rather than silently extending the experiment.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Human intent routing</span>"
+    ]
+  },
+  {
+    "objectID": "02_misc-human-intent-routing.html#when-an-experiment-may-run",
+    "href": "02_misc-human-intent-routing.html#when-an-experiment-may-run",
+    "title": "3  Human intent routing",
+    "section": "",
+    "text": "the question and scope;\nsafety invariants and stop conditions;\nthe device and host in scope;\nthe observations and files expected from the run;\nthe rule for evaluating the result; and\nExecution status: ready to run.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Human intent routing</span>"
+    ]
+  },
+  {
+    "objectID": "01_misc-preservation-protocol.html",
+    "href": "01_misc-preservation-protocol.html",
+    "title": "4  Preservation investigation protocol",
+    "section": "",
+    "text": "4.1 Evidence boundary\nThis book is the operating record for approved FreeMPE preservation research. It does not authorize or run device experiments automatically. Each numbered page proposes one bounded experiment, states what to preserve, and gives an explicit evaluation rule.\nWork through the pages in order with one device at a time. The first run uses the stable identifier seaboard-block-01; replace it only after the device register records the exact model privately.\nBefore opening Stage 1, create a human-intent specification with $speckit-specify. Select the preservation investigation route and set its execution status to ready to run only after its safety invariants, observation artifacts, and stop conditions are complete. Keep the specification with its other Spec Kit artifacts under ../specs/.\nAn observation is not a conclusion. Record the device, firmware, host, method, and result before updating any compatibility claim.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Preservation investigation protocol</span>"
+    ]
+  },
+  {
+    "objectID": "01_misc-preservation-protocol.html#evidence-boundary",
+    "href": "01_misc-preservation-protocol.html#evidence-boundary",
+    "title": "4  Preservation investigation protocol",
+    "section": "",
+    "text": "../evidence/records/ contains reviewable observations and conclusions.\n../evidence/private/ is for serial numbers, Bluetooth addresses, and other personal identifiers. It is deliberately not version-controlled.\n../evidence/captures/ is local staging for raw traffic captures. Review a capture’s contents and redistribution status before moving a selected, shareable derivative into the repository.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Preservation investigation protocol</span>"
+    ]
+  },
+  {
+    "objectID": "01_misc-preservation-protocol.html#sequence",
+    "href": "01_misc-preservation-protocol.html#sequence",
+    "title": "4  Preservation investigation protocol",
+    "section": "4.2 Sequence",
+    "text": "4.2 Sequence\n\nRegister the test host and device.\nEstablish an offline connection.\nCharacterize standard MIDI and MPE behaviour.\nTest an independent sound source.\nTest persistence across a power cycle.\nObserve the official configuration tool offline.\nCapture one configuration change, only after the safe baseline exists.\nWrite a dependency map and choose the next investigation.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Preservation investigation protocol</span>"
+    ]
+  },
+  {
+    "objectID": "10_page-register-test-host.html",
+    "href": "10_page-register-test-host.html",
+    "title": "5  Register the test host and device",
+    "section": "",
+    "text": "5.1 Investigation\nWhich physical device and macOS host are being observed, before any setting, firmware, or software state is changed?",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Register the test host and device</span>"
+    ]
+  },
+  {
+    "objectID": "10_page-register-test-host.html#investigation",
+    "href": "10_page-register-test-host.html#investigation",
+    "title": "5  Register the test host and device",
+    "section": "",
+    "text": "Use one Seaboard Block and the M4 MacBook Pro. Do not open ROLI Dashboard, run an updater, change a device setting, or flash firmware. Keep the device disconnected while you create the record. Confirm that an intention specification under ../specs/ selects the preservation-investigation route and is marked ready to run.\n\n\nFrom the repository root, copy the two templates:\ncp evidence/templates/device-identity.private.yml evidence/private/seaboard-block-01.yml\ncp evidence/templates/device-baseline.yml evidence/records/seaboard-block-01-baseline.yml\nPut serial number and Bluetooth address only in the private record. In the reviewable baseline, record the date, macOS version, Mac model, device label, connection planned for the test, and the fact that no device state has been changed.\n\n\nIf a version label is visible on the device, packaging, or a previously saved legitimate record, transcribe it as reported, with its source. Do not launch vendor software solely to discover a version at this stage. Leave unknown fields as unknown; unknown is useful evidence.\n\n\nThis stage passes when both records exist, the private record remains outside Git, and the reviewable baseline identifies one device and one host without claiming any MIDI or MPE result. It is acceptable—and expected—for firmware and other fields to remain unknown.\nIf any setting was changed or an updater was opened, mark the baseline as contaminated, explain why, and begin again with the next untouched device.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Register the test host and device</span>"
+    ]
+  },
+  {
+    "objectID": "11_page-establish-offline-connection.html",
+    "href": "11_page-establish-offline-connection.html",
+    "title": "6  Establish an offline connection",
+    "section": "",
+    "text": "6.1 Investigation\nCan macOS recognize the controller while the host has no network connection and no ROLI application is running?",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Establish an offline connection</span>"
+    ]
+  },
+  {
+    "objectID": "11_page-establish-offline-connection.html#investigation",
+    "href": "11_page-establish-offline-connection.html#investigation",
+    "title": "6  Establish an offline connection",
+    "section": "",
+    "text": "Confirm ../evidence/records/seaboard-block-01-baseline.yml exists and says that no device configuration has been changed. Close ROLI Dashboard and any other vendor software before connecting the device. Keep the approved preservation-investigation specification active; if its scope changes, pause and revise the specification before proceeding.\n\n\nDisconnect the Mac from Wi-Fi and Ethernet. Record the time and method in a new file:\ncp evidence/templates/offline-connection.yml evidence/records/seaboard-block-01-offline-connection.yml\nThen connect the Seaboard Block by USB. In Audio MIDI Setup, inspect the MIDI Studio view and record the displayed device name, whether it appears, and any visible ports. Do not alter device configuration.\n\n\nIf useful, save a redacted screenshot of the MIDI Studio view beside the record. Do not include unrelated devices, account information, or serial numbers. If no device appears, record that absence and the cable/port used; absence is a result, not a reason to try a firmware update.\n\n\nMark the record confirmed only if the controller appeared in macOS while the network was disconnected and no vendor tool was running. Otherwise mark it not-confirmed and record the exact visible symptom. This stage answers only operating-system recognition; it does not yet establish MIDI output.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Establish an offline connection</span>"
+    ]
+  },
+  {
+    "objectID": "12_page-characterize-midi-and-mpe.html",
+    "href": "12_page-characterize-midi-and-mpe.html",
+    "title": "7  Characterize standard MIDI and MPE",
+    "section": "",
+    "text": "7.1 Investigation\nWhat standard MIDI messages does the offline-connected Seaboard emit, and is its expressive behaviour consistent with MPE?",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Characterize standard MIDI and MPE</span>"
+    ]
+  },
+  {
+    "objectID": "12_page-characterize-midi-and-mpe.html#investigation",
+    "href": "12_page-characterize-midi-and-mpe.html#investigation",
+    "title": "7  Characterize standard MIDI and MPE",
+    "section": "",
+    "text": "Confirm that the Stage 2 record is confirmed. Keep the Mac offline, use the same USB connection, and do not open Dashboard or change a setting. This page may run only while the active intention specification still covers passive MIDI observation.\n\n\nChoose a MIDI event monitor that only listens to the Seaboard input. Record its name and version in a new observation record:\ncp evidence/templates/midi-mpe-observation.yml evidence/records/seaboard-block-01-midi-mpe.yml\nDo not send MIDI or SysEx messages to the device in this stage.\n\n\nFor each gesture, record message families, channels, and whether you observed the expected change: one note; two simultaneous notes; pressure on one held note; lateral movement of one held note; and vertical movement of one held note. Preserve a short redacted event log only if it contains no unrelated MIDI traffic.\n\n\nConfirm ordinary MIDI only when note-on and note-off events were observed. Confirm MPE only when the record contains evidence of independently expressive per-note behaviour and the observer/method is named. Otherwise retain unknown—a melodic response alone is not sufficient evidence for MPE.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Characterize standard MIDI and MPE</span>"
+    ]
+  },
+  {
+    "objectID": "13_page-test-independent-sound.html",
+    "href": "13_page-test-independent-sound.html",
+    "title": "8  Test an independent sound source",
+    "section": "",
+    "text": "8.1 Investigation\nCan the controller’s observed MIDI/MPE output drive a non-ROLI sound source while the host remains offline?",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Test an independent sound source</span>"
+    ]
+  },
+  {
+    "objectID": "13_page-test-independent-sound.html#investigation",
+    "href": "13_page-test-independent-sound.html#investigation",
+    "title": "8  Test an independent sound source",
+    "section": "",
+    "text": "Confirm that seaboard-block-01-midi-mpe.yml records at least ordinary MIDI. Choose a locally installed, non-ROLI instrument or synth and record its name and version. Do not download or purchase software for this experiment. If the intention specification does not name independent playback, revise it before continuing.\n\n\nCopy the template:\ncp evidence/templates/independent-sound.yml evidence/records/seaboard-block-01-independent-sound.yml\nRecord the MIDI input, sound source, output device, and whether it is configured for ordinary MIDI or MPE. Keep the route as simple as possible: controller to one sound source to one audio output.\n\n\nRepeat the Stage 3 gesture set and listen for note triggering and expressive response. Record audible results separately from message observations. A synth that cannot interpret MPE does not disprove MPE output; it only limits this particular playback test.\n\n\nMark ordinary independent playback confirmed only if notes sounded through a named non-ROLI source offline. Mark expressive independent playback confirmed only if the sound source was configured for MPE and responded as recorded. Keep all other claims separate.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Test an independent sound source</span>"
+    ]
+  },
+  {
+    "objectID": "14_page-test-power-cycle-persistence.html",
+    "href": "14_page-test-power-cycle-persistence.html",
+    "title": "9  Test power-cycle persistence",
+    "section": "",
+    "text": "9.1 Investigation\nDoes the observed baseline behaviour persist after a normal disconnect and reconnection, without a vendor tool or network connection?",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Test power-cycle persistence</span>"
+    ]
+  },
+  {
+    "objectID": "14_page-test-power-cycle-persistence.html#investigation",
+    "href": "14_page-test-power-cycle-persistence.html#investigation",
+    "title": "9  Test power-cycle persistence",
+    "section": "",
+    "text": "Confirm the previous MIDI/MPE and independent-sound records exist. Do not change configuration before this test; this stage observes persistence of the current state, rather than testing a newly chosen setting. Confirm that a normal power-cycle is within the active specification’s approved scope.\n\n\nCopy the template:\ncp evidence/templates/power-cycle.yml evidence/records/seaboard-block-01-power-cycle.yml\nRecord the MIDI device name, port appearance, and fixed gesture results before the power cycle. Disconnect normally, wait long enough for the device to power down, reconnect by the same USB path, and repeat exactly the same observations.\n\n\nCompare the two observations. Record changes in recognition, channel behaviour, pitch response, pressure, or surface response. Do not infer a cause; label each difference as observed, not observed, or unknown.\n\n\nConfirm baseline persistence only when the same documented observations recur after reconnection. If they differ, report exactly what changed and preserve the record for a later, focused investigation. Do not use Dashboard to repair the state before documenting the failure.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Test power-cycle persistence</span>"
+    ]
+  },
+  {
+    "objectID": "15_page-observe-dashboard-offline.html",
+    "href": "15_page-observe-dashboard-offline.html",
+    "title": "10  Observe Dashboard offline",
+    "section": "",
+    "text": "10.1 Investigation\nWhat can the legitimate, already-installed official configuration application do while offline, and what does it add beyond the preserved controller baseline?",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Observe Dashboard offline</span>"
+    ]
+  },
+  {
+    "objectID": "15_page-observe-dashboard-offline.html#investigation",
+    "href": "15_page-observe-dashboard-offline.html#investigation",
+    "title": "10  Observe Dashboard offline",
+    "section": "",
+    "text": "Confirm that the power-cycle record exists and that the Mac remains offline. Use only an already installed, legitimately obtained application. Do not sign in, update, install, flash firmware, or apply a device setting in this stage. The active specification must explicitly permit observation of Dashboard.\n\n\nCopy the template:\ncp evidence/templates/dashboard-offline.yml evidence/records/seaboard-block-01-dashboard-offline.yml\nRecord the application name/version, launch result, authentication prompt (if any), visible device state, and which controls are visible or disabled. Treat a login prompt as an observation; do not attempt to bypass it.\n\n\nClose the application without selecting a configuration control. Reconfirm the ordinary MIDI behaviour from Stage 3. This establishes whether observation alone changed the baseline.\n\n\nRecord Dashboard as offline-capable only for actions actually observed to work offline. Record it as authentication-dependent only when a prompt prevented a named action. Neither outcome determines whether the controller itself works offline.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Observe Dashboard offline</span>"
+    ]
+  },
+  {
+    "objectID": "16_page-capture-one-configuration-change.html",
+    "href": "16_page-capture-one-configuration-change.html",
+    "title": "11  Capture one configuration change",
+    "section": "",
+    "text": "11.1 Investigation\nWhat communication and persistent state accompany one known, reversible configuration change made by the official tool?",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Capture one configuration change</span>"
+    ]
+  },
+  {
+    "objectID": "16_page-capture-one-configuration-change.html#investigation",
+    "href": "16_page-capture-one-configuration-change.html#investigation",
+    "title": "11  Capture one configuration change",
+    "section": "",
+    "text": "Proceed only if the previous records exist, the selected control is understood, and the change is reversible without firmware flashing. Choose one variable—for example pitch-bend range—and one before/after value. If recovery is uncertain, stop at Stage 6. The active specification must name this exact control, both values, the capture method, and the stop condition before any change is made.\n\n\nCopy the metadata template and create a local raw-capture directory:\ncp evidence/templates/setting-capture.yml evidence/records/seaboard-block-01-setting-capture.yml\nmkdir -p evidence/captures/seaboard-block-01\nRecord device, firmware if known, application version, transport, capture tool, the exact control, and before value. Start with passive capture where possible.\n\n\nCapture traffic before, during, and after one change. Repeat the same change, then reverse it. Check the resulting device behaviour and power-cycle persistence. Keep raw capture local until you have reviewed its contents and redistribution status.\n\n\nCall a message pattern a hypothesis only when repeated captures align with one control change and its reversal. Record direction, payload candidates, device, firmware, persistence, and confidence. Do not send a suspected message back to the device in this stage.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Capture one configuration change</span>"
+    ]
+  },
+  {
+    "objectID": "17_page-write-dependency-map.html",
+    "href": "17_page-write-dependency-map.html",
+    "title": "12  Write the dependency map",
+    "section": "",
+    "text": "12.1 Investigation\nWhich controller capabilities work independently, which depend on an official application, and which remain unknown?",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Write the dependency map</span>"
+    ]
+  },
+  {
+    "objectID": "17_page-write-dependency-map.html#investigation",
+    "href": "17_page-write-dependency-map.html#investigation",
+    "title": "12  Write the dependency map",
+    "section": "",
+    "text": "Review all completed records from Stages 1–7. Do not fill a missing observation from memory, online discussion, or expectation. A missing record remains unknown. Link the map to the active intention specification so its conclusion can decide whether to stop, revise the investigation, begin learning, or open a new software-development intention.\n\n\nCopy the template:\ncp evidence/templates/dependency-map.yml evidence/records/seaboard-block-01-dependency-map.yml\nFor each capability—offline recognition, MIDI, MPE, independent sound, configuration, persistence, backup/restore, and recovery—record status, evidence file, and next investigation. Link only records that actually support the claim.\n\n\nPrioritize an unknown that can be resolved by observation. Examples include a different MIDI observer, a controlled power-cycle repeat, or a second passive capture. Do not escalate to firmware work merely because an advanced capability is unknown.\n\n\nThe stage passes when every claimed capability points to a specific evidence record and every unsupported capability remains unknown. The map must name one next low-risk investigation; it must not declare the device simply “free” or “bricked.”",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Write the dependency map</span>"
+    ]
   }
 ]

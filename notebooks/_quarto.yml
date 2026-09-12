@@ -7,10 +7,22 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - manifesto.qmd
+    - 02_misc-human-intent-routing.qmd
+    - 01_misc-preservation-protocol.qmd
+    - 10_page-register-test-host.qmd
+    - 11_page-establish-offline-connection.qmd
+    - 12_page-characterize-midi-and-mpe.qmd
+    - 13_page-test-independent-sound.qmd
+    - 14_page-test-power-cycle-persistence.qmd
+    - 15_page-observe-dashboard-offline.qmd
+    - 16_page-capture-one-configuration-change.qmd
+    - 17_page-write-dependency-map.qmd
 
 format:
   html:
     theme:
       - cosmo
       - brand
-
+    filters:
+      - _extensions/quarto-manual/manual.lua

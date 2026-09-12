@@ -1,0 +1,55 @@
+---
+title: "Write the dependency map"
+subtitle: "Stage 8 — convert observations into the next safe decision"
+manual.page: 17
+execute:
+  eval: false
+---
+
+## Investigation
+
+Which controller capabilities work independently, which depend on an official
+application, and which remain unknown?
+
+::: {.manual-prereq title="Require the investigation records"}
+
+Review all completed records from Stages 1–7. Do not fill a missing observation
+from memory, online discussion, or expectation. A missing record remains
+`unknown`. Link the map to the active intention specification so its conclusion
+can decide whether to stop, revise the investigation, begin learning, or open a
+new software-development intention.
+
+:::
+
+::: {.manual-procedure title="Create the evidence-backed map"}
+
+Copy the template:
+
+```bash
+cp evidence/templates/dependency-map.yml evidence/records/seaboard-block-01-dependency-map.yml
+```
+
+For each capability—offline recognition, MIDI, MPE, independent sound,
+configuration, persistence, backup/restore, and recovery—record status,
+evidence file, and next investigation. Link only records that actually support
+the claim.
+
+:::
+
+::: {.manual-procedure title="Choose the least invasive next step"}
+
+Prioritize an unknown that can be resolved by observation. Examples include a
+different MIDI observer, a controlled power-cycle repeat, or a second passive
+capture. Do not escalate to firmware work merely because an advanced capability
+is unknown.
+
+:::
+
+::: {.manual-check title="Evaluate the research outcome"}
+
+The stage passes when every claimed capability points to a specific evidence
+record and every unsupported capability remains `unknown`. The map must name one
+next low-risk investigation; it must not declare the device simply “free” or
+“bricked.”
+
+:::

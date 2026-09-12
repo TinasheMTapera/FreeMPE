@@ -1,0 +1,53 @@
+---
+title: "Characterize standard MIDI and MPE"
+subtitle: "Stage 3 — observe play behaviour before attempting configuration"
+manual.page: 12
+execute:
+  eval: false
+---
+
+## Investigation
+
+What standard MIDI messages does the offline-connected Seaboard emit, and is
+its expressive behaviour consistent with MPE?
+
+::: {.manual-prereq title="Require an offline-recognized controller"}
+
+Confirm that the Stage 2 record is `confirmed`. Keep the Mac offline, use the
+same USB connection, and do not open Dashboard or change a setting. This page
+may run only while the active intention specification still covers passive MIDI
+observation.
+
+:::
+
+::: {.manual-procedure title="Select a passive MIDI observer"}
+
+Choose a MIDI event monitor that only listens to the Seaboard input. Record its
+name and version in a new observation record:
+
+```bash
+cp evidence/templates/midi-mpe-observation.yml evidence/records/seaboard-block-01-midi-mpe.yml
+```
+
+Do not send MIDI or SysEx messages to the device in this stage.
+
+:::
+
+::: {.manual-procedure title="Perform one fixed gesture set"}
+
+For each gesture, record message families, channels, and whether you observed
+the expected change: one note; two simultaneous notes; pressure on one held
+note; lateral movement of one held note; and vertical movement of one held
+note. Preserve a short redacted event log only if it contains no unrelated MIDI
+traffic.
+
+:::
+
+::: {.manual-check title="Evaluate MIDI and MPE evidence"}
+
+Confirm ordinary MIDI only when note-on and note-off events were observed.
+Confirm MPE only when the record contains evidence of independently expressive
+per-note behaviour and the observer/method is named. Otherwise retain
+`unknown`—a melodic response alone is not sufficient evidence for MPE.
+
+:::

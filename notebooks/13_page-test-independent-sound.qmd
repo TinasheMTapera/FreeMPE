@@ -1,0 +1,54 @@
+---
+title: "Test an independent sound source"
+subtitle: "Stage 4 — separate controller operation from vendor sound software"
+manual.page: 13
+execute:
+  eval: false
+---
+
+## Investigation
+
+Can the controller's observed MIDI/MPE output drive a non-ROLI sound source
+while the host remains offline?
+
+::: {.manual-prereq title="Require observed output, not assumption"}
+
+Confirm that `seaboard-block-01-midi-mpe.yml` records at least ordinary MIDI.
+Choose a locally installed, non-ROLI instrument or synth and record its name
+and version. Do not download or purchase software for this experiment. If the
+intention specification does not name independent playback, revise it before
+continuing.
+
+:::
+
+::: {.manual-procedure title="Create a reproducible routing record"}
+
+Copy the template:
+
+```bash
+cp evidence/templates/independent-sound.yml evidence/records/seaboard-block-01-independent-sound.yml
+```
+
+Record the MIDI input, sound source, output device, and whether it is configured
+for ordinary MIDI or MPE. Keep the route as simple as possible: controller to
+one sound source to one audio output.
+
+:::
+
+::: {.manual-procedure title="Repeat the fixed gesture set"}
+
+Repeat the Stage 3 gesture set and listen for note triggering and expressive
+response. Record audible results separately from message observations. A synth
+that cannot interpret MPE does not disprove MPE output; it only limits this
+particular playback test.
+
+:::
+
+::: {.manual-check title="Evaluate independent playability"}
+
+Mark ordinary independent playback `confirmed` only if notes sounded through a
+named non-ROLI source offline. Mark expressive independent playback `confirmed`
+only if the sound source was configured for MPE and responded as recorded.
+Keep all other claims separate.
+
+:::

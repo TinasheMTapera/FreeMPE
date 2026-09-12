@@ -1,0 +1,55 @@
+---
+title: "Establish an offline connection"
+subtitle: "Stage 2 — test operating-system recognition without vendor services"
+manual.page: 11
+execute:
+  eval: false
+---
+
+## Investigation
+
+Can macOS recognize the controller while the host has no network connection and
+no ROLI application is running?
+
+::: {.manual-prereq title="Confirm the protected baseline exists"}
+
+Confirm `../evidence/records/seaboard-block-01-baseline.yml` exists and says
+that no device configuration has been changed. Close ROLI Dashboard and any
+other vendor software before connecting the device. Keep the approved
+preservation-investigation specification active; if its scope changes, pause and
+revise the specification before proceeding.
+
+:::
+
+::: {.manual-procedure title="Create the offline observation record"}
+
+Disconnect the Mac from Wi-Fi and Ethernet. Record the time and method in a new
+file:
+
+```bash
+cp evidence/templates/offline-connection.yml evidence/records/seaboard-block-01-offline-connection.yml
+```
+
+Then connect the Seaboard Block by USB. In Audio MIDI Setup, inspect the MIDI
+Studio view and record the displayed device name, whether it appears, and any
+visible ports. Do not alter device configuration.
+
+:::
+
+::: {.manual-procedure title="Preserve a minimal host observation"}
+
+If useful, save a redacted screenshot of the MIDI Studio view beside the
+record. Do not include unrelated devices, account information, or serial
+numbers. If no device appears, record that absence and the cable/port used;
+absence is a result, not a reason to try a firmware update.
+
+:::
+
+::: {.manual-check title="Evaluate offline recognition"}
+
+Mark the record `confirmed` only if the controller appeared in macOS while the
+network was disconnected and no vendor tool was running. Otherwise mark it
+`not-confirmed` and record the exact visible symptom. This stage answers only
+operating-system recognition; it does not yet establish MIDI output.
+
+:::

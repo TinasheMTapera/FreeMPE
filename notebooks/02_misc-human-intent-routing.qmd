@@ -1,0 +1,34 @@
+---
+title: "Human intent routing"
+---
+
+Every meaningful turn begins with a human intention: what the person wants to
+understand, change, make, or preserve. Software is one possible response; it is
+not the default container for the intention.
+
+Create the intention specification with `$speckit-specify`. The project-local
+Spec Kit template records the goal, uncertainty, constraints, completion rule,
+and route. Select the smallest route that can complete the intention.
+
+| Route | Use when the human intends to | Completion evidence |
+|---|---|---|
+| Document stewardship | improve an explanation, README, or manual | reviewed edit and relevant render or check |
+| Learning | develop understanding or a practical skill | learner-produced explanation, exercise, or reflection |
+| Preservation investigation | answer an empirical question about a device or ecosystem | approved experiment spec, observation artifacts, and an evaluated result |
+| Software development | create or change software because it is the right response | Spec Kit plan, tasks, implementation, tests, and convergence |
+
+## When an experiment may run
+
+An experiment is not authorized by curiosity alone, nor by a Manual page. Its
+intention specification must select **preservation investigation** and state:
+
+1. the question and scope;
+2. safety invariants and stop conditions;
+3. the device and host in scope;
+4. the observations and files expected from the run;
+5. the rule for evaluating the result; and
+6. `Execution status: ready to run`.
+
+The corresponding Manual page then supplies the visible procedure, local
+artifacts, and check. If the outcome suggests software, begin a new
+software-development intention rather than silently extending the experiment.

@@ -1,0 +1,41 @@
+---
+title: "Preservation investigation protocol"
+---
+
+This book is the operating record for approved FreeMPE preservation research. It
+does not authorize or run device experiments automatically. Each numbered page
+proposes one bounded experiment, states what to preserve, and gives an explicit
+evaluation rule.
+
+Work through the pages in order with one device at a time. The first run uses
+the stable identifier `seaboard-block-01`; replace it only after the device
+register records the exact model privately.
+
+Before opening Stage 1, create a human-intent specification with
+`$speckit-specify`. Select the **preservation investigation** route and set its
+execution status to `ready to run` only after its safety invariants, observation
+artifacts, and stop conditions are complete. Keep the specification with its
+other Spec Kit artifacts under `../specs/`.
+
+## Evidence boundary
+
+- `../evidence/records/` contains reviewable observations and conclusions.
+- `../evidence/private/` is for serial numbers, Bluetooth addresses, and other
+  personal identifiers. It is deliberately not version-controlled.
+- `../evidence/captures/` is local staging for raw traffic captures. Review a
+  capture's contents and redistribution status before moving a selected,
+  shareable derivative into the repository.
+
+An observation is not a conclusion. Record the device, firmware, host, method,
+and result before updating any compatibility claim.
+
+## Sequence
+
+1. Register the test host and device.
+2. Establish an offline connection.
+3. Characterize standard MIDI and MPE behaviour.
+4. Test an independent sound source.
+5. Test persistence across a power cycle.
+6. Observe the official configuration tool offline.
+7. Capture one configuration change, only after the safe baseline exists.
+8. Write a dependency map and choose the next investigation.
