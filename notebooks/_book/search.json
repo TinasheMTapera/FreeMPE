@@ -1,0 +1,22 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "The FreeMPE Project",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "After spending some time going back and forth with ChatGPT about how I like to play music, what I like about the Roli ecosystem, and how their current business affairs are panning out, I decided that I wanted to do what I can to keep this new, awesome technology alive and accessible regardless of what may or may not happen to Roli.\nI’m going to take a brief moment to philosophise on the state of things, if you don’t mind.\nI think most would agree that we would pay people for good things in 2026 if\n\nwe support its intended use and promised impact on us and the world at large,\nwe can afford the thing,\nit’s worth it holistically and presently, given the time in their life and circumstances they perceive to come from their decision to buy it.\n\nWhat’s clear is that in late-stage capitalism, one or more of these premises is being violated. When a software pirate violates it, most people believe they are violating principle 2. But pirates can have that, and components of 1 and 3 involved in their decision.\nI hope that readers can understand that this project does not use principle 2 as a singular reason for its existence, but does acknowledge that the rising cost of living crisis in the western world is not being helped by increasing costs, encroaching subscriptions, and general enshittification of things we’re supposed to do to get away from stress. Things like music.\nThis is not a dig on Roli, music business, music technologists, or anyone involved in the production of the Seaboard/Lightpad, Noise/Equator etc. I love and respect these products and their creators. But I just believe, deeply and fundamentally, that knowledge belongs to everyone. To see the phenomenon of MPE disappear with the company Roli, would be like if the we lived in a different timeline where the guy who was going to sign the papers to start selling Akai MPCs decided not to go to work that day, and as a result we all live without samplers.\nI do not want to live in that world, and today, AI exists as a reasoning engine that can help us put many, many, many millions of sentences together, summarize them, and spit them back out ot us with a plan.\nWell, this project is the culmination of many many conversations with my own ChatGPT instance, but also with several individuals on the internet and comment sections. My philosophy is laid bare in this file, which you are welcome to examine and is tracked by Git — there is no AI intervention in this file. It is what I truly believe should come of this project.\nEveryone should be able to see MPE the same way I saw an electric guitar pedal for the first time, or the first time I used VirtualDJ on my beat up old laptop for the first time, or your first drum machine — whatever it may be, we can’t afford to let the technological know-how cannot disappear just because someone enterprising put it behind a paywall.\nLet’s free MPE, y’all.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  }
+]
